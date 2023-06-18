@@ -1,18 +1,18 @@
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 interface BoxProps {
   width?: string;
 }
 
 export const Box = styled(motion.div)<BoxProps>`
-  width: ${props => (props.width ? props.width : '100%')};
+  width: ${(props) => (props.width ? props.width : "100%")};
   height: auto;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: ${(props) => (props.width ? "5 / 6" : "2 / 3")};
   border-radius: 20px;
   cursor: pointer;
   background-color: ${({ theme }) => theme.colors.mono.black};
-  ${props =>
+  ${(props) =>
     props.width &&
     `
     display: flex;
