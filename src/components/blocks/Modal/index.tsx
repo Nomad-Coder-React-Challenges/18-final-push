@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from "recoil";
 import {
   Container,
   Description,
@@ -6,14 +6,14 @@ import {
   Info,
   Paragraph,
   Title,
-} from './Modal.styled';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ModalState, ScreenSizeState } from '#src/stores/appStateStore';
-import { Box } from '#components/atoms/Box';
-import { useMovieDetail } from '#hooks/queries/moviesQuery';
-import { makeBgPath, makeImagePath } from '#src/utils/image';
-import { IconExit } from '#components/atoms/svgs';
-import { useTheme } from 'styled-components';
+} from "./Modal.styled";
+import { motion, AnimatePresence } from "framer-motion";
+import { ModalState, ScreenSizeState } from "#src/stores/appStateStore";
+import { Box } from "#components/atoms/Box";
+import { useMovieDetail } from "#hooks/queries/moviesQuery";
+import { makeBgPath, makeImagePath } from "#src/utils/image";
+import { IconExit } from "#components/atoms/svgs";
+import { useTheme } from "styled-components";
 
 const Modal = () => {
   const theme = useTheme();
@@ -36,7 +36,7 @@ const Modal = () => {
           exit={{ opacity: 0 }}
           onClick={handleModalCloseClick}
         >
-          <Box width={isMobile ? '65%' : '400px'} layoutId={modalValue?.id}>
+          <Box width={isMobile ? "80%" : "400px"} layoutId={modalValue?.id}>
             <Image src={makeBgPath(`${imgPath}`)} />
             <Description>
               <Title>{data?.data?.title}</Title>
@@ -62,7 +62,7 @@ const Modal = () => {
               height={28}
               stroke={theme.colors.mono[400]}
               onClick={handleModalCloseClick}
-              style={{ position: 'absolute', top: 20, right: 20 }}
+              style={{ position: "absolute", top: 20, right: 20 }}
             />
           </Box>
         </Container>
