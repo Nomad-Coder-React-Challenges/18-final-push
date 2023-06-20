@@ -1,9 +1,9 @@
-import { IMovie } from '#src/types/models';
-import { makeImagePath } from '#src/utils/image';
-import { useSetRecoilState } from 'recoil';
-import { ThumbnailContainer, Image, Title } from './Thumbnail.styled';
-import { ModalState } from '#src/stores/appStateStore';
-import { Box } from '#components/atoms/Box';
+import { IMovie } from "#src/types/models";
+import { makeImagePath } from "#src/utils/image";
+import { useSetRecoilState } from "recoil";
+import { ThumbnailContainer, Image, Title } from "./Thumbnail.styled";
+import { ModalState } from "#src/stores/appStateStore";
+import { Box } from "#components/atoms/Box";
 
 interface ProfileProps {
   info: IMovie | undefined;
@@ -29,12 +29,8 @@ const Thumbnail = ({ info, index }: ProfileProps) => {
           scale: 1.05,
           y: -10,
         }}
-        transition={{
-          stiffness: 200,
-          type: 'spring',
-        }}
       >
-        <Image src={makeImagePath(`${info?.poster_path}`)} loading='lazy' />
+        <Image src={makeImagePath(`${info?.poster_path}`)} loading="lazy" />
       </Box>
       <Title>{info?.title}</Title>
     </ThumbnailContainer>

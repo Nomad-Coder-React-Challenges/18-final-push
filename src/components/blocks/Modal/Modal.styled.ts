@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { mq } from '#src/styles/mediaQuery';
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const Container = styled(motion.div)`
   position: fixed;

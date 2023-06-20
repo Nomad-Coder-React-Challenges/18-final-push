@@ -7,11 +7,11 @@ import {
   Paragraph,
   Title,
 } from "./Modal.styled";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ModalState, ScreenSizeState } from "#src/stores/appStateStore";
 import { Box } from "#components/atoms/Box";
 import { useMovieDetail } from "#hooks/queries/moviesQuery";
-import { makeBgPath, makeImagePath } from "#src/utils/image";
+import { makeBgPath } from "#src/utils/image";
 import { IconExit } from "#components/atoms/svgs";
 import { useTheme } from "styled-components";
 
@@ -19,7 +19,7 @@ const Modal = () => {
   const theme = useTheme();
   const { isMobile } = useRecoilValue(ScreenSizeState);
   const [modalValue, setModalValue] = useRecoilState(ModalState);
-  const { data, isLoading } = useMovieDetail(Number(modalValue.id));
+  const { data } = useMovieDetail(Number(modalValue.id));
   const imgPath = data?.data?.backdrop_path;
   const handleModalCloseClick = () => {
     setModalValue({ id: null, isOpen: false });
